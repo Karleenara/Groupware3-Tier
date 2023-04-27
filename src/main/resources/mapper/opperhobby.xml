@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="opperhobby">
+    <insert id="insertHobby" parameterType="HUDto">
+    	insert into opperhobby
+    	(opper_cd, opper_user_id)
+    	values (#{hobby_cd}, #{user_id})
+    </insert>
+
+	<select id="userHobby" resultType="HUDto">
+		select *
+		from opperhobby where opper_user_id=#{user_id}
+	</select>
+	
+	<delete id="deleteHobby" parameterType="HUDto">
+		DELETE FROM opperhobby
+		WHERE opper_user_id = #{user_id}
+	</delete>
+	
+</mapper>

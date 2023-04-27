@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+        
+ <mapper namespace="test">
+    <select id="getList" parameterType="UserDto" resultType="UserDto">
+        select user_id, user_nm, user_eml_addr, d.dept_nm, user_telno, user_addr, user_aprv_yn
+    	from "user" u
+    	left outer join dept d on u.user_dept_no = d.dept_no
+    	<if test="#{searchKeyword}!=null">
+    	where user_nm like '%' || #{searchKeyword} || '%'
+    	</if>
+    	order by user_id desc
+    </select>
+    
+    <insert id="insertUser" parameterType="UserDto">
+    	INSERT into public."user"
+    	(user_id, user_nm, user_eml_addr, user_telno, user_addr, user_dept_no, user_aprv_yn)
+    	VALUES (#{user_id}, #{user_nm}, #{user_eml_addr}, #{user_telno}, #{user_addr},#{user_dept_no},'N')
+    </insert>
+    
+    <select id="getView" parameterType="UserDto" resultType="UserDto">
+    	select user_id, user_nm, user_eml_addr, user_dept_no, user_telno, user_addr, user_aprv_yn
+    	from "user" u
+    	left outer join dept d on u.user_dept_no = d.dept_no
+    	where user_id = #{user_id}
+    </select>
+    
+    <update id="updateUser" parameterType="UserDto">
+    	UPDATE public."user"
+		SET user_nm=#{user_nm}, user_eml_addr=#{user_eml_addr}, user_telno=#{user_telno}, user_addr=#{user_addr}, user_dept_no=#{user_dept_no}, user_aprv_yn='Y'
+		WHERE user_id= #{user_id}
+    </update>
+    
+    <delete id="deleteUser" parameterType="UserDto">
+    	DELETE FROM public."user"
+		WHERE user_id= #{user_id}
+    </delete>
+    
+</mapper>
