@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/bootstrap.min.css}" href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+      <div class="page-header">
+        <h1>사용자 등록</h1>
+      </div>
+      <div class="starter-template">
+          <form name="myform" id="myform" method="post" th:action="@{/user/save}" >
+                <div class="form-group">
+                    <label style="float: left" for="user_id" class="col-sm-2 control-label">ID</label>
+                        <div class="col-sm-10" style="margin-top: 10px;">
+                            <input type="id" class="form-control" id="user_id" name="user_id" placeholder="사용자ID"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label style="float: left" for="user_nm" class="col-sm-2 control-label">사원명</label>
+                        <div class="col-sm-10" style="margin-top: 10px;">
+                            <input type="name" class="form-control" id="user_nm" name="user_nm" placeholder="Name"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label style="float: left" for="user_eml_addr" class="col-sm-2 control-label">이메일</label>
+                        <div class="col-sm-10" style="margin-top: 10px;">
+                            <input type="email" class="form-control" id="user_eml_addr" name="user_eml_addr" placeholder="Email"/>
+                    </div>
+                </div></br>
+
+			<label>부서</label>
+				<select class="form-select" name="user_dept_no">
+				<option value="">=====선택=====</option>
+				<option th:each="d:${deptlist}" th:value="${d.dept_no}" th:text="${d.dept_nm}"></option>
+		            </select> 
+			<!-- 
+               <label>부서</label>
+               		<div class="form-select">
+		            <select name="user_dept_no">
+		            	<option value="">==선택==</option>
+		                <option th:each="d:${deptlist}" th:value="${d.dept_no}" th:text="${d.dept_nm}"></option>
+		            </select>
+		            </div>
+                 -->
+                <div class="form-group">
+                    <label style="float: left" for="user_telno" class="col-sm-2 control-label">전화번호</label>
+                        <div class="col-sm-10" style="margin-top: 10px;">
+                            <input type="telno" class="form-control" id="user_telno" name="user_telno" placeholder="PhoneNumber"/>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label style="float: left" for="user_addr" class="col-sm-2 control-label">주소</label>
+                        <div class="col-sm-10" style="margin-top: 10px;">
+                            <input type="addr" class="form-control" id="user_addr" name="user_addr" placeholder="Address"/>
+                    </div>
+                </div></br>
+               
+             <div>취미</div>
+              <div th:each="h : ${hobbylist}" class="form-check">
+	      			<input type="checkbox" name="hobby_cd" th:value="${h.hobby_cd}" class="form-check-input" >
+	      			<label  th:text="${h.hobby_nm}" class="form-check-label">취미</label>
+	  			</div>
+<!-- 
+            <label style="float: left" for="hobby" class="col-sm-2 control-label">취미</label></br>
+            <input type="checkbox" th:each="h:${hobbylist}" th:value="${h.hobby_cd}" th:text="${h.hobby_nm}" /></br>
+             </br>
+       -->       
+
+
+            <div class="btn_wrap text-center">
+               <a th:href="@{/}" class="btn btn-secondary">뒤로 가기</a>
+               <button type="submit" class="btn btn-primary waves-effect waves-light">승인 요청</button>
+            </div>
+           </form>
+      </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+		<!-- <typeAlias alias="GuestbookDto" type="com.kosa.mycompany.guestbook.GuestbookDto" /> -->
+		<typeAlias alias ="UserDto" type="com.ds.gw.bt.dto.UserDto"/>
+		<typeAlias alias ="DeptDto" type="com.ds.gw.bt.dto.DeptDto"/>
+		<typeAlias alias ="HobbyDto" type="com.ds.gw.bt.dto.HobbyDto"/>
+		<typeAlias alias ="HUDto" type="com.ds.gw.bt.dto.HUDto"/>
+	</typeAliases>
+
+	<mappers>
+		<!-- <mapper resource="/com/kosa/mycompany/mapper/Guestbook.xml" /> -->
+		<mapper resource="mapper/test.xml" />
+		<mapper resource="mapper/hobby.xml" />
+		<mapper resource="mapper/opperhobby.xml" />
+		<mapper resource="mapper/dept.xml" />
+	</mappers>
+
+
+</configuration>

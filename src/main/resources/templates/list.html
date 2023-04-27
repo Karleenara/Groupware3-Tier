@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/bootstrap.min.css}"
+          href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>사용자 목록</h2>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end"
+                    onclick="location.href='addForm.html'"
+                    th:onclick="|location.href='@{/basic/items/add}'|"
+                    type="button">
+                등록
+            </button>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>사원명</th>
+                <th>이메일</th>
+                <th>번호</th>
+                <th>주소</th>
+                <th>부서</th>
+                <th>상태</th>
+                <th>취미</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+		         <tr th:each="list : ${getList}">
+		            <td><span th:text="${list.user_id}"></span></td>
+		            <td><span th:text="${list.user_nm}"></span></td>
+		            <td><span th:text="${list.user_eml_addr}"></span></td>
+		            <td><span th:text="${list.user_telno}"></span></td>
+		            <td><span th:text="${list.user_addr}"></span></td>
+		            <td><span th:text="${list.user_dept_no}"></span></td>
+		            <td><span th:text="${list.user_aprv_yn}"></span></td>
+		            <td><span th:text="${list.user_hobby}"></span></td>
+		         </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
