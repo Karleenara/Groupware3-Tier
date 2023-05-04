@@ -9,10 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
 
-import com.ds.gw.bt.dto.DeptDto;
-import com.ds.gw.bt.dto.HUDto;
-import com.ds.gw.bt.dto.HobbyDto;
-import com.ds.gw.bt.dto.UserDto;
+import com.ds.gw.pt.dto.DeptDto;
+import com.ds.gw.pt.dto.HUDto;
+import com.ds.gw.pt.dto.HobbyDto;
+import com.ds.gw.pt.dto.UserDto;
 import com.ds.gw.pt.service.ApiService;
 
 

@@ -1,6 +1,5 @@
 package com.ds.gw.pt.controller;
 
-import java.net.URI;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -10,12 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
-
-import com.ds.gw.bt.dto.DeptDto;
-import com.ds.gw.bt.dto.HUDto;
-import com.ds.gw.bt.dto.HobbyDto;
-import com.ds.gw.bt.dto.UserDto;
+import com.ds.gw.pt.dto.DeptDto;
+import com.ds.gw.pt.dto.HUDto;
+import com.ds.gw.pt.dto.HobbyDto;
+import com.ds.gw.pt.dto.UserDto;
 import com.ds.gw.pt.service.ApiService;
 
 

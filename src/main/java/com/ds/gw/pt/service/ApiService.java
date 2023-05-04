@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.ds.gw.bt.dto.DeptDto;
-import com.ds.gw.bt.dto.HUDto;
-import com.ds.gw.bt.dto.HobbyDto;
-import com.ds.gw.bt.dto.UserDto;
+import com.ds.gw.pt.dto.DeptDto;
+import com.ds.gw.pt.dto.HUDto;
+import com.ds.gw.pt.dto.HobbyDto;
+import com.ds.gw.pt.dto.UserDto;
 
 @Service
 public class ApiService {
