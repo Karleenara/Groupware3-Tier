@@ -3,7 +3,6 @@ package com.ds.gw.bt.controller;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -62,10 +61,6 @@ public class ApiController {
 		return ResponseEntity.ok(u_dto);
 	}
 	
-	@RequestMapping("/searchKeyword")
-	public String getSearchkey(UserDto u_dto) {
-		return u_dto.getSearchKeyword();
-	}
 	
 //	------------deptservice--------------------
 	
